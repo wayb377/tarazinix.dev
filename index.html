@@ -1,0 +1,621 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tarazinix.dev — Ideias fora do comum</title>
+<meta name="description" content="Tarazinix.dev — Criação de sites únicos, alternativos, profissionais e personalizados. Seu projeto, suas regras.">
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #080908;
+    --green: #c5ff00;
+    --white: #eeeeea;
+    --gray: #858585;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: crosshair;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Space Mono', monospace;
+    overflow-x: hidden;
+}
+
+/* TEXTURA */
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    pointer-events: none;
+    opacity: .08;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* CABEÇALHO */
+
+header {
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #252525;
+}
+
+.logo {
+    color: var(--green);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.status {
+    font-size: 10px;
+    color: var(--gray);
+}
+
+.status span {
+    color: var(--green);
+}
+
+/* INTRODUÇÃO */
+
+.hero {
+    min-height: 90vh;
+    padding: 100px 9%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.version {
+    color: var(--green);
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(65px, 13vw, 155px);
+    line-height: .85;
+    letter-spacing: -9px;
+    position: relative;
+    z-index: 2;
+}
+
+h1 span {
+    color: var(--green);
+    font-style: italic;
+}
+
+.intro {
+    margin-top: 45px;
+    max-width: 580px;
+    color: #aaa;
+    font-size: 13px;
+    line-height: 2.2;
+}
+
+.intro strong {
+    color: white;
+}
+
+.symbol {
+    position: absolute;
+    right: 12%;
+    top: 18%;
+    font-size: 200px;
+    color: var(--green);
+    opacity: .75;
+    animation: spin 20s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* CONVITE PARA ROLAR */
+
+.scroll-hint {
+    margin-top: 35px;
+    color: var(--green);
+    font-size: 10px;
+    letter-spacing: 2px;
+    animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+    50% { opacity: .3; }
+}
+
+/* TEXTO ANIMADO */
+
+.marquee {
+    background: var(--green);
+    color: black;
+    padding: 17px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transform: rotate(-2deg) scale(1.03);
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+}
+
+.marquee div {
+    display: inline-block;
+    animation: move 22s linear infinite;
+}
+
+@keyframes move {
+    to { transform: translateX(-50%); }
+}
+
+/* SOBRE MIM */
+
+.about {
+    padding: 150px 9%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+
+.label {
+    color: var(--green);
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.about h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(45px, 7vw, 85px);
+    line-height: .9;
+    letter-spacing: -5px;
+}
+
+.about h2 span {
+    color: var(--green);
+}
+
+.about p {
+    align-self: center;
+    color: #999;
+    font-size: 13px;
+    line-height: 2.3;
+}
+
+/* DIFERENCIAL */
+
+.difference {
+    padding: 120px 9%;
+    border-top: 1px solid #292929;
+    border-bottom: 1px solid #292929;
+}
+
+.difference h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(40px, 8vw, 95px);
+    line-height: .95;
+    letter-spacing: -5px;
+}
+
+.difference h2 span {
+    color: var(--green);
+}
+
+.difference p {
+    max-width: 650px;
+    margin-top: 35px;
+    color: #999;
+    font-size: 13px;
+    line-height: 2.2;
+}
+
+/* ESTILOS DE SITES */
+
+.styles {
+    padding: 130px 9%;
+}
+
+.styles-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(45px, 8vw, 90px);
+    line-height: .95;
+    letter-spacing: -5px;
+    margin-bottom: 65px;
+}
+
+.styles-title span {
+    color: var(--green);
+}
+
+.style-item {
+    padding: 30px 0;
+    border-top: 1px solid #333;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 20px;
+}
+
+.style-number {
+    color: var(--green);
+    font-size: 12px;
+}
+
+.style-item h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.style-item p {
+    color: #999;
+    font-size: 12px;
+    line-height: 2;
+    max-width: 550px;
+}
+
+/* FRASE */
+
+.quote {
+    padding: 100px 9%;
+    text-align: center;
+    border-top: 1px solid #292929;
+}
+
+.quote p {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(25px, 5vw, 60px);
+    font-weight: 800;
+}
+
+.quote span {
+    color: var(--green);
+}
+
+/* CONTATO */
+
+.contact {
+    padding: 120px 9%;
+    background: var(--green);
+    color: #080908;
+}
+
+.contact .label {
+    color: #333;
+}
+
+.contact h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(55px, 10vw, 115px);
+    line-height: .85;
+    letter-spacing: -6px;
+    margin: 35px 0;
+}
+
+.contact p {
+    font-size: 13px;
+    margin-bottom: 35px;
+}
+
+.socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.social {
+    padding: 18px 28px;
+    background: #080908;
+    color: var(--green);
+    text-decoration: none;
+    font-size: 12px;
+    border: 1px solid #080908;
+    transition: .3s;
+}
+
+.social:hover {
+    background: transparent;
+    color: black;
+    transform: translateY(-5px) rotate(-2deg);
+}
+
+/* RODAPÉ */
+
+footer {
+    padding: 30px 9%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 10px;
+    color: #666;
+}
+
+footer strong {
+    color: var(--green);
+}
+
+/* CELULARES */
+
+@media(max-width: 700px) {
+
+    header {
+        padding: 20px 6%;
+    }
+
+    .hero {
+        padding: 100px 7%;
+        min-height: 80vh;
+    }
+
+    h1 {
+        letter-spacing: -5px;
+    }
+
+    .symbol {
+        right: 5%;
+        top: 12%;
+        font-size: 90px;
+        opacity: .3;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        padding: 100px 7%;
+    }
+
+    .difference {
+        padding: 100px 7%;
+    }
+
+    .styles {
+        padding: 100px 7%;
+    }
+
+    .style-item {
+        grid-template-columns: 45px 1fr;
+    }
+
+    .style-item h3 {
+        font-size: 21px;
+    }
+
+    .contact {
+        padding: 100px 7%;
+    }
+
+    .contact h2 {
+        letter-spacing: -3px;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">tarazinix.dev</div>
+    <div class="status"><span>●</span> SISTEMA ONLINE</div>
+</header>
+
+<main>
+
+<!-- INTRODUÇÃO -->
+
+<section class="hero">
+
+    <div class="symbol">✳</div>
+
+    <div class="version">.dev / ARQUIVO PESSOAL Nº 001</div>
+
+    <h1>
+        OLÁ, SOU<br>
+        <span>TARAZINIX.</span>
+    </h1>
+
+    <p class="intro">
+        Olá, me chamo <strong>Tarazinix</strong>.
+        Gosto de coisas estranhas, ideias criativas e tudo
+        aquilo que foge do comum. Estou aqui para ajudar
+        você a extrair o melhor do seu projeto, transformando
+        ideias em experiências digitais únicas e cheias de personalidade.
+    </p>
+
+    <p class="scroll-hint">
+        ↓ CONTINUE ROLANDO... TEM MAIS POR AQUI
+    </p>
+
+</section>
+
+<!-- FAIXA ANIMADA -->
+
+<div class="marquee">
+    <div>
+        CRIATIVIDADE ✳ PENSE DIFERENTE ✳ CRIE O INESPERADO ✳
+        NADA DE SITES GENÉRICOS ✳ CRIATIVIDADE ✳ PENSE DIFERENTE ✳
+        CRIE O INESPERADO ✳ NADA DE SITES GENÉRICOS ✳
+    </div>
+</div>
+
+<!-- SOBRE MIM -->
+
+<section class="about">
+
+    <div>
+        <div class="label">// QUEM SOU EU?</div>
+
+        <h2>
+            EU NÃO<br>
+            SIGO<br>
+            <span>PADRÕES.</span>
+        </h2>
+    </div>
+
+    <p>
+        Sou um criador que acredita que a internet não precisa
+        ser feita de mais do mesmo. Gosto de explorar o estranho,
+        o alternativo e o experimental. Minha ideia é transformar
+        cada projeto em algo que tenha identidade própria,
+        fugindo de modelos prontos e designs sem personalidade.
+    </p>
+
+</section>
+
+<!-- DIFERENCIAL -->
+
+<section class="difference">
+
+    <div class="label">// UM POUCO SOBRE MEU TRABALHO</div>
+
+    <h2>
+        SEU PROJETO.<br>
+        SUAS <span>REGRAS.</span>
+    </h2>
+
+    <p>
+        Gosto do estranho, do criativo e de tudo aquilo que
+        foge do comum. Mas sei que cada projeto tem sua própria
+        identidade e que nem todo mundo procura algo extravagante.
+
+        Também desenvolvo sites modernos, profissionais,
+        minimalistas e tradicionais, seguindo o estilo e as
+        preferências de cada cliente.
+
+        Seja algo completamente fora da caixa ou um site
+        mais discreto e elegante, minha missão é transformar
+        sua ideia em realidade.
+    </p>
+
+</section>
+
+<!-- TIPOS DE SITES -->
+
+<section class="styles">
+
+    <div class="label">// VOCÊ ESCOLHE O ESTILO</div>
+
+    <h2 class="styles-title">
+        DO MAIS<br>
+        NORMAL AO<br>
+        <span>INESPERADO.</span>
+    </h2>
+
+    <div class="style-item">
+        <div class="style-number">01 /</div>
+        <div>
+            <h3>Alternativo</h3>
+            <p>
+                Sites experimentais, diferentes, criativos e cheios
+                de personalidade. Para quem quer fugir completamente
+                do visual tradicional.
+            </p>
+        </div>
+    </div>
+
+    <div class="style-item">
+        <div class="style-number">02 /</div>
+        <div>
+            <h3>Profissional</h3>
+            <p>
+                Sites elegantes, modernos, organizados e com aparência
+                profissional. Ideais para negócios, marcas e projetos.
+            </p>
+        </div>
+    </div>
+
+    <div class="style-item">
+        <div class="style-number">03 /</div>
+        <div>
+            <h3>Personalizado</h3>
+            <p>
+                Você traz a ideia, escolhe o estilo e eu desenvolvo
+                algo de acordo com o que imaginou. Seu projeto,
+                suas preferências, sua identidade.
+            </p>
+        </div>
+    </div>
+
+</section>
+
+<!-- FRASE -->
+
+<section class="quote">
+
+    <p>
+        O COMUM É FÁCIL.<br>
+        O <span>INCOMUM</span> É A ARTE.
+    </p>
+
+</section>
+
+<!-- CONTATOS -->
+
+<section class="contact">
+
+    <div class="label">// ENCONTRE-ME NA INTERNET</div>
+
+    <h2>
+        VAMOS<br>
+        CRIAR<br>
+        ALGO?
+    </h2>
+
+    <p>
+        Tem uma ideia? Diferente, tradicional ou completamente maluca?
+        Vamos conversar.
+    </p>
+
+    <div class="socials">
+
+        <a class="social"
+           href="https://www.instagram.com/tarazinix?srtk=Zmx5NjhkZWQ2YW5h"
+           target="_blank"
+           rel="noopener noreferrer">
+           INSTAGRAM ↗
+        </a>
+
+        <a class="social"
+           href="https://t.me/tarazinixdev"
+           target="_blank"
+           rel="noopener noreferrer">
+           TELEGRAM ↗
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    <span>© 2026 — <strong>TARAZINIX.DEV</strong></span>
+    <span>INCOMUM POR NATUREZA. ✳</span>
+</footer>
+
+</body>
+</html>
